@@ -1,0 +1,252 @@
+.table-btn {
+    height: 35px !important;
+    padding: 2px 10px 0px 10px !important;
+}
+
+.success{
+    color: #5fb57c;
+}
+
+.error{
+    color: #f44336;
+}
+
+.footer-big{
+    margin-top: calc(100vh - 44.3112%)!important;
+}
+
+.img-shell img{
+    width: 110px;
+    height: 110px;
+}
+
+.img-shell-2 img{
+    width: 210px;
+    height: 210px;
+} 
+.btn-more{
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.myDef{
+    background-color: #4b63ec;
+}
+
+/* My customs */
+.nav-link img{
+  width: 48px;
+  margin-top: -7px;
+  margin-left: -7px;
+}
+.sidebar .active .nav-link:hover{
+  background-color: #536dff !important;
+  box-shadow:0 7px 10px -7px #536dff;
+}
+
+.form-control, .is-focused .form-control {
+    background-image: linear-gradient(to top, #3a4ebe 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px) !important;
+}
+
+.form-control{
+  padding-left: 10px !important;
+}
+
+.card .card-header-myDef .card-icon,
+.card .card-header-myDef .card-text,
+.card .card-header-myDef:not(.card-header-icon):not(.card-header-text),
+.card.bg-myDef,
+.card.card-rotate.bg-myDef .front,
+.card.card-rotate.bg-myDef .back {
+  background: linear-gradient(60deg, #4b63ec, #2846ec);
+}
+
+.btn.btn-myDef {
+  color: #fff;
+  background-color: #536dff;
+  border-color: #536dff;
+  box-shadow: 0 2px 2px 0 #2f2e402d, 0 3px 1px -2px #3433492d, 0 1px 5px 0 #2f2e4018;
+}
+
+.btn.btn-myDef:hover {
+  color: #fff;
+  background-color: #4b63ec;
+  border-color: #293db3;
+}
+
+.btn.btn-myDef:focus,
+.btn.btn-myDef.focus,
+.btn.btn-myDef:hover {
+  color: #fff;
+  background-color: #4b63ec;
+  border-color: #293db3;
+}
+
+.btn.btn-myDef:active,
+.btn.btn-myDef.active,
+.open>.btn.btn-myDef.dropdown-toggle,
+.show>.btn.btn-myDef.dropdown-toggle {
+  color: #fff;
+  background-color: #4b63ec;
+  border-color: #293db3;
+  box-shadow: 0 2px 2px 0 #2f2e402d, 0 3px 1px -2px #3433492d, 0 1px 5px 0 #2f2e4018;
+}
+
+.btn.btn-myDef:active:hover,
+.btn.btn-myDef:active:focus,
+.btn.btn-myDef:active.focus,
+.btn.btn-myDef.active:hover,
+.btn.btn-myDef.active:focus,
+.btn.btn-myDef.active.focus,
+.open>.btn.btn-myDef.dropdown-toggle:hover,
+.open>.btn.btn-myDef.dropdown-toggle:focus,
+.open>.btn.btn-myDef.dropdown-toggle.focus,
+.show>.btn.btn-myDef.dropdown-toggle:hover,
+.show>.btn.btn-myDef.dropdown-toggle:focus,
+.show>.btn.btn-myDef.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #4b63ec;
+  border-color: #0928d6;
+}
+
+.open>.btn.btn-myDef.dropdown-toggle.bmd-btn-icon {
+  color: inherit;
+  background-color: #536dff;
+}
+
+.open>.btn.btn-myDef.dropdown-toggle.bmd-btn-icon:hover {
+  background-color: #4b63ec;
+}
+
+.btn.btn-myDef.disabled:focus,
+.btn.btn-myDef.disabled.focus,
+.btn.btn-myDef:disabled:focus,
+.btn.btn-myDef:disabled.focus {
+  background-color: #536dff;
+  border-color: #536dff;
+}
+
+.btn.btn-myDef.disabled:hover,
+.btn.btn-myDef:disabled:hover {
+  background-color: #536dff;
+  border-color: #536dff;
+}
+
+.btn.btn-myDef:focus,
+.btn.btn-myDef:active,
+.btn.btn-myDef:hover {
+  box-shadow: 0 14px 26px -12px #2f2e402d, 0 4px 23px 0px #2f2e402d, 0 8px 10px -5px #2f2e402d;
+}
+
+.btn.btn-myDef.btn-link {
+  background-color: transparent;
+  color: #536dff;
+  box-shadow: none;
+}
+
+.btn.btn-myDef.btn-link:hover,
+.btn.btn-myDef.btn-link:focus,
+.btn.btn-myDef.btn-link:active {
+  background-color: transparent;
+  color: #536dff;
+}
+.dropdown-item:focus,.dropdown-item:hover{
+    box-shadow:0 4px 20px 0 rgba(0,0,0,.14),0 7px 10px -5px #3547ad !important;
+    background-color:#536dff !important;
+    color:#fff!important;
+}
+
+.sidebar[data-color="myDefault"] li.active>a {
+  background-color: #536dff;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #536dff6c;
+}
+
+.fixed-plugin .btn.btn-myDef {
+  color: #fff;
+  background-color: #536dff;
+  border-color: #536dff;
+  box-shadow: 0 2px 2px 0 rgba(255, 152, 0, 0.14), 0 3px 1px -2px rgba(255, 152, 0, 0.2), 0 1px 5px 0 rgba(255, 152, 0, 0.12);
+}
+
+.fixed-plugin .btn.btn-myDef:hover {
+  color: #fff;
+  background-color: #536dff;
+  border-color: #0421c5;
+}
+
+.fixed-plugin .btn.btn-myDef:focus,
+.fixed-plugin .btn.btn-myDef.focus,
+.fixed-plugin .btn.btn-myDef:hover {
+  color: #fff;
+  background-color: #536dff;
+  border-color: #0421c5;
+}
+
+.fixed-plugin .btn.btn-myDef:active,
+.fixed-plugin .btn.btn-myDef.active,
+.open>.fixed-plugin .btn.btn-myDef.dropdown-toggle,
+.show>.fixed-plugin .btn.btn-myDef.dropdown-toggle {
+  color: #fff;
+  background-color: #536dff;
+  border-color: #0421c5;
+  box-shadow: 0 2px 2px 0 rgba(255, 152, 0, 0.14), 0 3px 1px -2px rgba(255, 152, 0, 0.2), 0 1px 5px 0 rgba(255, 152, 0, 0.12);
+}
+
+.fixed-plugin .btn.btn-myDef:active:hover,
+.fixed-plugin .btn.btn-myDef:active:focus,
+.fixed-plugin .btn.btn-myDef:active.focus,
+.fixed-plugin .btn.btn-myDef.active:hover,
+.fixed-plugin .btn.btn-myDef.active:focus,
+.fixed-plugin .btn.btn-myDef.active.focus,
+.open>.fixed-plugin .btn.btn-myDef.dropdown-toggle:hover,
+.open>.fixed-plugin .btn.btn-myDef.dropdown-toggle:focus,
+.open>.fixed-plugin .btn.btn-myDef.dropdown-toggle.focus,
+.show>.fixed-plugin .btn.btn-myDef.dropdown-toggle:hover,
+.show>.fixed-plugin .btn.btn-myDef.dropdown-toggle:focus,
+.show>.fixed-plugin .btn.btn-myDef.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #536dff;
+  border-color: #0421c5;
+}
+
+.open>.fixed-plugin .btn.btn-myDef.dropdown-toggle.bmd-btn-icon {
+  color: inherit;
+  background-color: #536dff;
+}
+
+.open>.fixed-plugin .btn.btn-myDef.dropdown-toggle.bmd-btn-icon:hover {
+  background-color: #536dff;
+}
+
+.fixed-plugin .btn.btn-myDef.disabled:focus,
+.fixed-plugin .btn.btn-myDef.disabled.focus,
+.fixed-plugin .btn.btn-myDef:disabled:focus,
+.fixed-plugin .btn.btn-myDef:disabled.focus {
+  background-color: #536dff;
+  border-color: #536dff;
+}
+
+.fixed-plugin .btn.btn-myDef.disabled:hover,
+.fixed-plugin .btn.btn-myDef:disabled:hover {
+  background-color: #536dff;
+  border-color: #536dff;
+}
+
+.fixed-plugin .btn.btn-myDef:focus,
+.fixed-plugin .btn.btn-myDef:active,
+.fixed-plugin .btn.btn-myDef:hover {
+  box-shadow: 0 14px 26px -12px #2f2e402d, 0 4px 23px 0px #2f2e402d, 0 8px 10px -5px #2f2e402d;
+}
+
+.fixed-plugin .btn.btn-myDef.btn-link {
+  background-color: transparent;
+  color: #536dff;
+  box-shadow: none;
+}
+
+.fixed-plugin .btn.btn-myDef.btn-link:hover,
+.fixed-plugin .btn.btn-myDef.btn-link:focus,
+.fixed-plugin .btn.btn-myDef.btn-link:active {
+  background-color: transparent;
+  color: #536dff;
+}

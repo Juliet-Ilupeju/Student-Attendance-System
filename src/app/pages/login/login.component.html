@@ -1,0 +1,95 @@
+<nav class="navbar navbar-color-on-scroll navbar-expand-lg">
+  <div class="container ">
+    <div class="navbar-translate">
+      <a class="navbar-brand" href="#">Project Name</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse home">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fas fa-home"></i> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fas fa-pen-fancy"></i> Something
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="dash.html" class="nav-link">
+            <i class="fas fa-binoculars"></i> Dashboard
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container pt-5">
+  <app-loader></app-loader>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+      <form role="form" [formGroup]="loginForm">
+        <div class="card card-prof ile">
+          <div class="card-header card-header card-header-myDef">
+            <h4 class="text-center card-title">Login</h4>
+          </div>
+
+          <div class="card-body p-4">
+            <div class="input-group pt-4 pb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+              <input class="form-control" formControlName="email" placeholder="Email" type="email">
+            </div>
+            <div class="input-group pb-4 pt-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-key"></i>
+                </span>
+              </div>
+              <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            </div>
+          </div>
+          <div class="footer align-self-center">
+            <button type="submit" class="btn btn-raised btn-myDef" [disabled]="!loginForm.valid"
+              (click)="loginDashboard()">Sign in</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer footer-default footer-big">
+  <div class="container">
+    <nav class="float-left">
+      <ul>
+        <li>
+          <a href="#">
+            Project Name
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="copyright float-right" style="font-size: 14px;">
+      &copy;
+      <script>
+        document.write(new Date().getFullYear())
+
+      </script>. Developed in collaboration with KMF Inc.
+    </div>
+  </div>
+</footer>
