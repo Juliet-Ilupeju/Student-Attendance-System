@@ -42,7 +42,7 @@ export class AddStudentComponent implements OnInit {
   }
 
   public addStudent() {
-    this.funcService.addAccount(this.addStudentForm.value, this.imgSelected)
+    this.funcService.addStudent(this.addStudentForm.value, this.imgSelected)
   }
 
 }
