@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SchoolVSystem"
+    }
+  },
+  "defaultProject": "SchoolVSystem",
+  "cli": {
+    "analytics": "1f17a094-47e3-4a47-9ff7-24c5926ba545"
+  }
 }
