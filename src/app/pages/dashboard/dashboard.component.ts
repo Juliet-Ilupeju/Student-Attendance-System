@@ -13,13 +13,15 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAdmin();
-    this.emitService.uniData.subscribe((data) => {
-      this.adminName = data;
-    });
+    setTimeout(() => {
+      this.emitService.uniData.subscribe((data) => {
+        this.adminName = data;
+      });
+    }, 500);
   }
 
   public async getAdmin() {
-    const adminData = await localStorage.getItem('admininfo');
-    this.adminData = JSON.parse(adminData);
+    const adminData = await localStorage.getItem('adminData');
+    this.emitService.changeUniData(adminData);
   }
 }

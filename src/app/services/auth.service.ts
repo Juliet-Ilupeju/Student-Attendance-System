@@ -75,6 +75,7 @@ export class AuthService {
                 mdata = data;
                 const name = `${mdata.name}`;
                 this.emitService.changeUniData(name);
+                localStorage.setItem('adminData', name);
                 this.toastS.mainSuccess(`Welcome ${name}`);
               });
             this.uiService.hideLoader();
