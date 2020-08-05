@@ -86,4 +86,8 @@ export class FuncService {
             this.uiService.showError(err.message);
         });
     }
+
+    public getCheckInStudents() {
+        return this.firestore.collection('attendance_checkin', ref => ref.orderBy('createdAt', 'desc')).valueChanges();
+    }
 }

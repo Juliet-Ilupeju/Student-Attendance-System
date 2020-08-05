@@ -18,7 +18,6 @@ export class RegStudentsComponent implements OnInit {
   public getStudents() {
     this.funcService.getRegisteredStudents().subscribe((data) => {
       this.students = data;
-      console.log(data);
     });
   }
 

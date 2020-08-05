@@ -47,16 +47,16 @@
                   <tbody>
                     <tr>
                       <td>
-                        PS/ITC/16/0000
+                        {{checkInData.stID}}
                       </td>
                       <td>
-                        Juliet Ilupeju
+                        {{checkInData.name}}
                       </td>
                       <td>
-                        BSC. IT
+                       {{checkInData.course}}
                       </td>
                       <td>
-                        02/12/1478 
+                        {{checkInData.createdAt * 1000 | date: 'medium'}}
                       </td>
                       <td><i class="fas fa-check-circle success"></i></td>
                     </tr>
