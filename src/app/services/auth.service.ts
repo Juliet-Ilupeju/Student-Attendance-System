@@ -1,3 +1,4 @@
+import { EmitterService } from './emitter.service';
 import { UiService } from './ui.service';
 import { ToastService } from './toast.service';
 import { Router } from '@angular/router';
@@ -16,6 +17,7 @@ export class AuthService {
     public afs: AngularFirestore,
     public rt: Router,
     public toastS: ToastService,
+    private emitService: EmitterService,
     private uiService: UiService
   ) { }
   public login(loginData) {
@@ -69,8 +71,11 @@ export class AuthService {
               .doc(`${adm}`)
               .valueChanges()
               .subscribe(data => {
-                localStorage.setItem('admininfo', JSON.stringify(data));
-                this.toastS.mainSuccess(`Welcome Admin`);
+                let mdata: any;
+                mdata = data;
+                const name = `${mdata.name}`;
+                this.emitService.changeUniData(name);
+                this.toastS.mainSuccess(`Welcome ${name}`);
               });
             this.uiService.hideLoader();
           });

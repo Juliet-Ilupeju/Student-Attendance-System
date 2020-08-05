@@ -61,13 +61,13 @@
                     <div class="col-md-6">
                       <div class="form-group bmd-form-group">
                         <label>Middle Name</label>
-                        <input type="text" class="form-control" formControlName="lname" name="lname" id="lname">
+                        <input type="text" class="form-control" formControlName="mname" name="mname" id="mname">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group bmd-form-group">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" formControlName="mname" name="mname" id="mname">
+                        <input type="text" class="form-control" formControlName="lname" name="lname" id="lname">
                       </div>
                     </div>
                   </div>
@@ -151,8 +151,9 @@
                     </p>
                     <input hidden name="fingerprint" id="fingerprint"/>
                     <div class="img-shell p-3">
-                      <button onclick="fetchNFC()" class="btn active btn-secondary"><i
-                          class="fas fa-fingerprint fa-5x"></i></button>
+                      <button onclick="fetchNFC()" class="btn active btn-secondary">
+                        <i class="fas fa-barcode fa-5x"></i>
+                      </button>
                     </div>
                   </div>
                 </div>

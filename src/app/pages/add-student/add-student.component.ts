@@ -1,3 +1,4 @@
+import { EmitterService } from './../../services/emitter.service';
 import { UiService } from './../../services/ui.service';
 import { FuncService } from './../../services/func.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AddStudentComponent implements OnInit {
   public addStudentForm: FormGroup;
   public imgSelected = null;
-  public imgSelectedSRC = "";
+  public imgSelectedSRC = '';
   constructor(private funcService: FuncService, private uiService: UiService) { }
 
   ngOnInit() {
@@ -37,12 +38,12 @@ export class AddStudentComponent implements OnInit {
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.imgSelectedSRC = reader.result as string;
-      }
+      };
     }
   }
 
   public addStudent() {
-    this.funcService.addStudent(this.addStudentForm.value, this.imgSelected)
+    this.funcService.addStudent(this.addStudentForm.value, this.imgSelected);
   }
 
 }

@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class EmitterService {
-  private uniSource = new BehaviorSubject('some data');
+  private uniSource = new BehaviorSubject('Administrator');
   private courseSourse = new BehaviorSubject('some data');
   public uniData = this.uniSource.asObservable();
   public courseData = this.courseSourse.asObservable();

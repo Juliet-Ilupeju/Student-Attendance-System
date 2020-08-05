@@ -1,3 +1,4 @@
+import { EmitterService } from './services/emitter.service';
 import { environment } from './../environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -53,7 +54,7 @@ import { EditStudentComponent } from './pages/edit-student/edit-student.componen
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [AuthGuard, AuthService, UiService, ToastService, FuncService],
+  providers: [AuthGuard, AuthService, UiService, ToastService, FuncService, EmitterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
