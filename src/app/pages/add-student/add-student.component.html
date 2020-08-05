@@ -1,3 +1,4 @@
+
 <div class="wrapper ">
   <div class="sidebar" data-color="myDefault" data-background-color="white" data-image="assets/img/sidebar-4.jpg">
     <app-sidenav></app-sidenav>
@@ -145,12 +146,13 @@
                 <div class="card card-profile">
                   <div class="card-header-myDef">Upload fingerprint data</div>
                   <div class="card-body">
-                    <p class="card-description">
-                      Add the fingerprint data of the student here
+                    <p class="card-description" id="studID">
+                      
                     </p>
+                    <input hidden name="fingerprint" id="fingerprint"/>
                     <div class="img-shell p-3">
-                      <a href="#" onclick="" class="btn active btn-secondary"><i
-                          class="fas fa-fingerprint fa-5x"></i></a>
+                      <button onclick="fetchNFC()" class="btn active btn-secondary"><i
+                          class="fas fa-fingerprint fa-5x"></i></button>
                     </div>
                   </div>
                 </div>
@@ -178,8 +180,37 @@
             document.write(new Date().getFullYear())
 
           </script>. Developed by UCC IT Students.
+          
         </div>
       </div>
     </footer>
   </div>
 </div>
+
+<script>
+  function fetchNFC() {
+    alert("HEY");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var obj = JSON.parse(this.responseText);
+        if(obj.status != 1){
+          alert("Failed to Write");
+          return;
+        }
+        document.getElementById("fingerprint").value = this.responseText;
+        alert("Written Successfully");
+        console.log(this.responseText);
+      }else{
+        alert("Failed to Write");
+      }
+    };
+    var id = document.getElementById("indexnum").value;
+    if(id == ""){
+      alert("Student ID is Required to writen to NFC");
+      return;
+    }
+    xhttp.open("GET", "http://169.254.122.161:5000/write?student_id=" + id, true);
+    xhttp.send();
+  }
+</script>
