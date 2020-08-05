@@ -28,6 +28,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { LoaderComponent } from './misc/loader/loader.component';
 import { EditStudentComponent } from './pages/edit-student/edit-student.component';
+import { CheckInComponent } from './pages/check-in/check-in.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { EditStudentComponent } from './pages/edit-student/edit-student.componen
     ViewAttendanceComponent,
     RegStudentsComponent,
     SidenavComponent,
-    EditStudentComponent
+    EditStudentComponent,
+    CheckInComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,41 @@
+<div class="container pt-5">
+  <app-loader></app-loader>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 ml-auto mr-auto login-main">
+      <form role="form" [formGroup]="checkForm">
+        <div class="card card-prof ile">
+          <div class="card-header card-header card-header-myDef">
+            <h4 class="text-center card-title">Student Attendance System <br>Check In</h4>
+          </div>
+          
+          <div class="card-body pl-4 pr-4 pb-1">
+              <label class="mb-0">Select your course.</label>
+              <div class="input-group pb-2 pt-0">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-graduation-cap"></i>
+                  </span>
+                </div>
+                <select class="custom-select form-control" id="inputGroupSelect03" formControlName="course">
+                  <option value="1">One</option>
+                </select>
+            </div>
+            <div class="input-group pt-2 pb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+              <input class="form-control" formControlName="uid" placeholder="Student ID" type="text" readonly>
+            </div>
+          </div>
+          <div class="footer align-self-center">
+            <button type="submit" class="btn btn-raised btn-myDef" [disabled]="!checkForm.valid"
+              (click)="checkInStudent()">Sign in</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -11,6 +11,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class AuthService {
   adminuser;
+  public createdAt = firebase.firestore.Timestamp.now().seconds;
   // tslint:disable-next-line:max-line-length
   constructor(
     public afauth: AngularFireAuth,
@@ -38,6 +39,7 @@ export class AuthService {
   public logout() {
     return this.afauth.signOut().then(() => {
       this.rt.navigate(['login']);
+      localStorage.clear();
       window.location.reload();
     });
   }
@@ -81,6 +83,39 @@ export class AuthService {
             this.uiService.hideLoader();
           });
         }
+      });
+  }
+
+  public loginAnom(uid, course) {
+    this.uiService.showLoader();
+    this.afauth.signInAnonymously().then(() => {
+      this.afs.collection('studentProfile', ref => ref.where('indexnum', '==', `${uid}`)).get().toPromise().then((data) => {
+        data.docs.map(userdata => {
+          const mData = userdata.data();
+          const name = `${mData.fname} ${mData.mname} ${mData.lname}`;
+          this.userCheckIN(uid, name, course, this.createdAt, mData.studentKey);
+        });
+      });
+    });
+  }
+
+  public userCheckIN(id, name, course, time, key) {
+    return this.afs
+      .collection('attendance_checkin')
+      .add({
+        studentKey: key,
+        stID: id,
+        attendance_course: course,
+        check_in_time: time,
+        studentName: name,
+      })
+      .then(() => {
+        this.uiService.showSuccess(`You're check-in successfully`);
+        this.uiService.hideLoader();
+      })
+      .catch((err) => {
+        this.uiService.hideLoader();
+        this.toastS.mainError(err.message);
       });
   }
 }

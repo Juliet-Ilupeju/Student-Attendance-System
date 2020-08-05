@@ -1,3 +1,4 @@
+import { CheckInComponent } from './pages/check-in/check-in.component';
 import { EditStudentComponent } from './pages/edit-student/edit-student.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ViewAttendanceComponent } from './pages/view-attendance/view-attendance.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
   {path: 'add_student', component: AddStudentComponent, canActivate: [AuthGuard]},
+  {path: 'check-in', component: CheckInComponent},
   {path: 'edit_student/:id', component: EditStudentComponent, canActivate: [AuthGuard]},
   {path: 'register_student', component: RegStudentsComponent, canActivate: [AuthGuard]},
   {path: 'view_students', component: ViewStudentComponent, canActivate: [AuthGuard]},
