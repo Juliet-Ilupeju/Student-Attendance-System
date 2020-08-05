@@ -10,7 +10,7 @@ import { NFC } from 'nfc-pcsc';
 })
 export class CheckInComponent implements OnInit {
   public checkForm: FormGroup;
-  constructor(private authService: AuthService, private nfc: NFC) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.checkForm = new FormGroup({
@@ -20,12 +20,16 @@ export class CheckInComponent implements OnInit {
   }
 
   public checkInStudent() {
-    this.nfc.on('reader', reader => {
-      reader.on('card', card => {
+    const nfc = new NFC();
+    nfc.on('reader', (reader) => {
+      reader.on('card', (card) => {
         console.log(`${reader.reader.name}  card detected`, card);
       });
     });
-    this.authService.loginAnom(this.checkForm.value.uid, this.checkForm.value.course);
+    this.authService.loginAnom(
+      this.checkForm.value.uid,
+      this.checkForm.value.course
+    );
     this.checkForm.reset();
   }
 }
