@@ -1,6 +1,8 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NFC } from 'nfc-pcsc';
+
 @Component({
   selector: 'app-check-in',
   templateUrl: './check-in.component.html',
@@ -8,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CheckInComponent implements OnInit {
   public checkForm: FormGroup;
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private nfc: NFC) {}
 
   ngOnInit() {
     this.checkForm = new FormGroup({
@@ -18,8 +20,10 @@ export class CheckInComponent implements OnInit {
   }
 
   public checkInStudent() {
-    fetch('http://169.254.122.161:5000').then((res) => {
-      console.log(res);
+    this.nfc.on('reader', reader => {
+      reader.on('card', card => {
+        console.log(`${reader.reader.name}  card detected`, card);
+      });
     });
     this.authService.loginAnom(this.checkForm.value.uid, this.checkForm.value.course);
     this.checkForm.reset();
