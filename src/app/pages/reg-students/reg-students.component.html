@@ -7,7 +7,7 @@
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
             <div class="container-fluid">
               <div class="navbar-wrapper">
-                <a class="navbar-brand" href="javascript:;">Add Student</a>
+                <a class="navbar-brand">Registered Students</a>
               </div>
               <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@
                                     <table class="table table-hover text-center">
                                         <thead class="">
                                             <th>
-                                                Index Number
+                                                Student ID
                                             </th>
                                             <th>
                                                 Student Name
@@ -61,21 +61,21 @@
                                         </thead>
 
                                         <tbody>
-                                            <tr>
+                                            <tr *ngFor="let student of students" >
                                                 <td>
-                                                    PS/ITC/16/0000
+                                                    {{student.indexnum}}
                                                 </td>
                                                 <td>
-                                                    Juliet Ilupeju
+                                                    {{student.fname}} {{student.lname}}
                                                 </td>
                                                 <td>
-                                                    BSc Information Technology
+                                                    {{student.program}}
                                                 </td>
                                                 <td>
-                                                    400
+                                                    {{student.year}}
                                                 </td>
                                                 <td>
-                                                    12/04/2020
+                                                    {{student.createdAt * 1000 | date:'medium'}}
                                                 </td>
                                                 <td>
                                                     <button

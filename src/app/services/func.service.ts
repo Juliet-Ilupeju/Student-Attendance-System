@@ -12,7 +12,7 @@ export class FuncService {
     constructor(private firestore: AngularFirestore, private uiService: UiService, private storage: AngularFireStorage) { }
 
     public getRegisteredStudents() {
-        return this.firestore.collection('studentProfile').valueChanges();
+        return this.firestore.collection('studentProfile', ref => ref.orderBy('createdAt', 'desc')).valueChanges();
     }
 
     public delStudent(studID) {
@@ -29,26 +29,25 @@ export class FuncService {
     public addStudent(data, file) {
         this.uiService.showLoader();
         return this.firestore.collection('studentProfile').add({
-            prefix: data['prefix'],
-            fname: data['fname'],
-            lname: data['lname'],
-            mname: data['mname'],
-            address: data['address'],
-            indexnum: data['indexnum'],
-            program: data['program'],
-            year: data['year'],
-            course: data['course'],
-            code: data['code'],
-            fingerprint: '',
+            prefix: data.prefix,
+            fname: data.fname,
+            lname: data.lname,
+            mname: data.mname,
+            address: data.address,
+            indexnum: data.indexnum,
+            program: data.program,
+            year: data.year,
+            course: data.course,
+            code: data.code,
             createdAt: this.createdAt
         }).then((res) => {
-            this.updateImage(res.id, file)
+            this.updateImage(res.id, file);
             this.uiService.hideLoader();
             this.uiService.showSuccess('Student Added Successfully');
         }).catch(err => {
             this.uiService.hideLoader();
             this.uiService.showError(err.message);
-        })
+        });
     }
 
     public updateImage(key, file) {
@@ -65,16 +64,16 @@ export class FuncService {
     public editStudent(data, studID) {
         this.uiService.showLoader();
         return this.firestore.collection('studentProfile').doc(studID).update({
-            prefix: data['prefix'],
-            fname: data['fname'],
-            lname: data['lname'],
-            mname: data['mname'],
-            address: data['address'],
-            indexnum: data['indexnum'],
-            program: data['program'],
-            year: data['year'],
-            course: data['course'],
-            code: data['code'],
+            prefix: data.prefix,
+            fname: data.fname,
+            lname: data.lname,
+            mname: data.mname,
+            address: data.address,
+            indexnum: data.indexnum,
+            program: data.program,
+            year: data.year,
+            course: data.course,
+            code: data.code,
             fingerprint: '',
         }).then((res) => {
             this.uiService.hideLoader();
@@ -82,6 +81,6 @@ export class FuncService {
         }).catch(err => {
             this.uiService.hideLoader();
             this.uiService.showError(err.message);
-        })
+        });
     }
 }
