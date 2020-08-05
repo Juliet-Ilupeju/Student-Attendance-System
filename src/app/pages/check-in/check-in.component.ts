@@ -13,11 +13,14 @@ export class CheckInComponent implements OnInit {
   ngOnInit() {
     this.checkForm = new FormGroup({
       course: new FormControl('', Validators.required),
-      uid: new FormControl('', Validators.required),
+      uid: new FormControl(''),
     });
   }
 
   public checkInStudent() {
+    fetch('http://169.254.122.161:5000').then((res) => {
+      console.log(res);
+    });
     this.authService.loginAnom(this.checkForm.value.uid, this.checkForm.value.course);
     this.checkForm.reset();
   }

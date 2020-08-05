@@ -87,16 +87,17 @@ export class AuthService {
   }
 
   public loginAnom(uid, course) {
-    this.uiService.showLoader();
-    this.afauth.signInAnonymously().then(() => {
-      this.afs.collection('studentProfile', ref => ref.where('indexnum', '==', `${uid}`)).get().toPromise().then((data) => {
-        data.docs.map(userdata => {
-          const mData = userdata.data();
-          const name = `${mData.fname} ${mData.mname} ${mData.lname}`;
-          this.userCheckIN(uid, name, course, this.createdAt, mData.studentKey);
-        });
-      });
-    });
+    
+    // this.uiService.showLoader();
+    // this.afauth.signInAnonymously().then(() => {
+    //   this.afs.collection('studentProfile', ref => ref.where('indexnum', '==', `${uid}`)).get().toPromise().then((data) => {
+    //     data.docs.map(userdata => {
+    //       const mData = userdata.data();
+    //       const name = `${mData.fname} ${mData.mname} ${mData.lname}`;
+    //       this.userCheckIN(uid, name, course, this.createdAt, mData.studentKey);
+    //     });
+    //   });
+    // });
   }
 
   public userCheckIN(id, name, course, time, key) {
