@@ -26,6 +26,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { LoaderComponent } from './misc/loader/loader.component';
+import { EditStudentComponent } from './pages/edit-student/edit-student.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { LoaderComponent } from './misc/loader/loader.component';
     AddStudentComponent,
     ViewAttendanceComponent,
     RegStudentsComponent,
-    SidenavComponent
+    SidenavComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,

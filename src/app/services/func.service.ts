@@ -15,9 +15,13 @@ export class FuncService {
         return this.firestore.collection('studentProfile', ref => ref.orderBy('createdAt', 'desc')).valueChanges();
     }
 
+    public getStudent(key) {
+        return this.firestore.collection('studentProfile', ref => ref.where('studentKey', '==', key)).valueChanges();
+    }
+
     public delStudent(studID) {
         this.uiService.showLoader();
-        return this.firestore.collection('studentProfile').doc(studID).delete().then(() => {
+        return this.firestore.collection('studentProfile').doc(`${studID}`).delete().then(() => {
             this.uiService.hideLoader();
             this.uiService.showSuccess('Student Deleted Successfully');
         }).catch(err => {
@@ -61,9 +65,9 @@ export class FuncService {
         });
     }
 
-    public editStudent(data, studID) {
+    public editStudent(data) {
         this.uiService.showLoader();
-        return this.firestore.collection('studentProfile').doc(studID).update({
+        return this.firestore.collection('studentProfile').doc(data.studentKey).update({
             prefix: data.prefix,
             fname: data.fname,
             lname: data.lname,
@@ -74,7 +78,6 @@ export class FuncService {
             year: data.year,
             course: data.course,
             code: data.code,
-            fingerprint: '',
         }).then((res) => {
             this.uiService.hideLoader();
             this.uiService.showSuccess('Student Edited Successfully');

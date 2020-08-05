@@ -50,13 +50,13 @@
                                                 Program
                                             </th>
                                             <th>
-                                                Level
+                                                Year
                                             </th>
                                             <th>
                                                 Date Added
                                             </th>
                                             <th>
-                                                More
+                                                Action
                                             </th>
                                         </thead>
 
@@ -79,9 +79,14 @@
                                                 </td>
                                                 <td>
                                                     <button
-                                                        class="btn btn-more btn-myDef btn-fab-mini btn-round table-btn"
-                                                        onclick="location.href='stu-profile.html'">
-                                                        <i class="fas fa-lg fa-arrow-right"></i>
+                                                        class="btn btn-more mr-2 btn-myDef btn-fab-mini btn-round table-btn"
+                                                        (click)="editStudent(student.studentKey)" >
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button
+                                                      class="btn btn-more btn-myDef btn-fab-mini btn-danger btn-round table-btn"
+                                                      (click)="delStudent(student.studentKey)">
+                                                      <i class="fas fa-trash"></i>
                                                     </button>
                                                 </td>
                                             </tr>

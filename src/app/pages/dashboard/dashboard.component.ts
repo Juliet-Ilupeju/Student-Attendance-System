@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  adminData: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.getAdmin();
+  }
+
+  public async getAdmin() {
+    const adminData = await localStorage.getItem('admininfo');
+    this.adminData = JSON.parse(adminData);
   }
 }

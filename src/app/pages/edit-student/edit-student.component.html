@@ -1,4 +1,3 @@
-
 <div class="wrapper ">
   <div class="sidebar" data-color="myDefault" data-background-color="white" data-image="assets/img/sidebar-4.jpg">
     <app-sidenav></app-sidenav>
@@ -31,7 +30,7 @@
 
     <div class="content">
       <div class="container-fluid">
-        <form [formGroup]="addStudentForm">
+        <form>
           <div class="row">
             <app-loader></app-loader>
             <div class="col-md-8">
@@ -46,13 +45,13 @@
                     <div class="col-md-6">
                       <div class="form-group bmd-form-group">
                         <label>Mr/Mrs/Ms</label>
-                        <input type="text" class="form-control" formControlName="prefix" name="prefix" id="prefix">
+                        <input type="text" class="form-control" [(ngModel)]="studentData.prefix" name="prefix" id="prefix">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group bmd-form-group">
                         <label>First Name</label>
-                        <input type="text" class="form-control" formControlName="fname" name="fname" id="fname">
+                        <input type="text" class="form-control" [(ngModel)]="studentData.fname" name="fname" id="fname">
                       </div>
                     </div>
                   </div>
@@ -61,13 +60,13 @@
                     <div class="col-md-6">
                       <div class="form-group bmd-form-group">
                         <label>Middle Name</label>
-                        <input type="text" class="form-control" formControlName="lname" name="lname" id="lname">
+                        <input type="text" class="form-control" [(ngModel)]="studentData.mname" name="mname" id="mname">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group bmd-form-group">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" formControlName="mname" name="mname" id="mname">
+                        <input type="text" class="form-control" [(ngModel)]="studentData.lname" name="lname" id="lname">
                       </div>
                     </div>
                   </div>
@@ -76,7 +75,7 @@
                     <div class="col-md-12">
                       <div class="form-group bmd-form-group">
                         <label>Residencial Adress</label>
-                        <input type="text" class="form-control" formControlName="address" name="address" id="address">
+                        <input type="text" class="form-control" [(ngModel)]="studentData.address" name="address" id="address">
                       </div>
                     </div>
                   </div>
@@ -85,14 +84,14 @@
                     <div class="col-md-6">
                       <div class="form-group bmd-form-group">
                         <label>Index Number</label>
-                        <input type="text" class="form-control" formControlName="indexnum" name="indexnum"
+                        <input type="text" class="form-control" [(ngModel)]="studentData.indexnum" name="indexnum"
                           id="indexnum">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group bmd-form-group">
                         <label>Program</label>
-                        <input type="text" class="form-control" formControlName="program" name="program" id="program">
+                        <input type="text" class="form-control" [(ngModel)]="studentData.program" name="program" id="program">
                       </div>
                     </div>
                   </div>
@@ -101,26 +100,26 @@
                     <div class="col-md-4">
                       <div class="form-group bmd-form-group">
                         <label>Year</label>
-                        <input type="number" class="form-control" formControlName="year" name="year" id="year">
+                        <input type="number" class="form-control" [(ngModel)]="studentData.year" name="year" id="year">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group bmd-form-group">
                         <label>Course Title</label>
-                        <input type="text" class="form-control" formControlName="course" name="course" id="course">
+                        <input type="text" class="form-control" [(ngModel)]="studentData.course" name="course" id="course">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group bmd-form-group">
                         <label>Course Code</label>
-                        <input type="text" class="form-control" formControlName="code" name="code" id="code">
+                        <input type="text" class="form-control" [(ngModel)]="studentData.code" name="code" id="code">
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-block btn-success" [disabled]="!addStudentForm.valid"
-                    (click)="addStudent()"><i class="fas fa-plus"></i> Add Student</button>
+                  <button type="submit" class="btn btn-block btn-success"
+                    (click)="editStudent()"><i class="fas fa-plus"></i> Edit Student</button>
                 </div>
               </div>
             </div>
@@ -131,8 +130,8 @@
                   <div class="card-header-myDef">Upload an image</div>
                   <div class="card-body">
                     <div class="card-header-image img-shell p-3">
-                      <img class="img" src="../assets/img/faces/marc.jpg" *ngIf="imgSelected === null">
-                      <img class="img" src="{{imgSelectedSRC}}" *ngIf="imgSelected !== null">
+                      <img class="img" src="../assets/img/faces/marc.jpg" *ngIf="imgSelectedSRC === null">
+                      <img class="img" src="{{imgSelectedSRC}}" *ngIf="imgSelectedSRC !== null">
                     </div>
                     <p class="card-description">
                       Use the button below to Upload an image
@@ -147,9 +146,9 @@
                   <div class="card-header-myDef">Click to add NFC data</div>
                   <div class="card-body">
                     <p class="card-description" id="studID">
-                      
+
                     </p>
-                    <input hidden name="fingerprint" id="fingerprint"/>
+                    <input hidden name="fingerprint" id="fingerprint" />
                     <div class="img-shell p-3">
                       <button onclick="fetchNFC()" class="btn active btn-secondary"><i
                           class="fas fa-fingerprint fa-5x"></i></button>
@@ -178,9 +177,8 @@
           &copy;
           <script>
             document.write(new Date().getFullYear())
-
           </script>. Developed by UCC IT Students.
-          
+
         </div>
       </div>
     </footer>
@@ -191,22 +189,22 @@
   function fetchNFC() {
     alert("HEY");
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         var obj = JSON.parse(this.responseText);
-        if(obj.status != 1){
+        if (obj.status != 1) {
           alert("Failed to Write");
           return;
         }
         document.getElementById("fingerprint").value = this.responseText;
         alert("Written Successfully");
         console.log(this.responseText);
-      }else{
+      } else {
         alert("Failed to Write");
       }
     };
     var id = document.getElementById("indexnum").value;
-    if(id == ""){
+    if (id == "") {
       alert("Student ID is Required to writen to NFC");
       return;
     }

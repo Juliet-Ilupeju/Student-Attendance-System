@@ -24,13 +24,11 @@ export class AuthService {
       .signInWithEmailAndPassword(loginData.email, loginData.password)
       .then(res => {
         console.log('logged');
-        
         const adminuid = res.user.uid;
         this.authEmailCheck(loginData.email, adminuid);
       })
       .catch(err => {
         console.log('not not');
-        
         this.uiService.hideLoader();
         this.toastS.mainError(err.message);
       });
@@ -42,10 +40,10 @@ export class AuthService {
     });
   }
   get authState(): any {
-    return this.afauth.authState
+    return this.afauth.authState;
   }
   adminAuthUser() {
-    return this.afauth.currentUser
+    return this.afauth.currentUser;
   }
 
   public authEmailCheck(email, adm) {
@@ -71,7 +69,8 @@ export class AuthService {
               .doc(`${adm}`)
               .valueChanges()
               .subscribe(data => {
-                this.toastS.mainSuccess(`Welcome Team`);
+                localStorage.setItem('admininfo', JSON.stringify(data));
+                this.toastS.mainSuccess(`Welcome Admin`);
               });
             this.uiService.hideLoader();
           });
