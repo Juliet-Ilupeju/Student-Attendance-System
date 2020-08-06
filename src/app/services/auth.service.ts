@@ -87,6 +87,7 @@ export class AuthService {
   }
 
   public loginAnom(uid, course) {
+      
     // this.uiService.showLoader();
     // this.afauth.signInAnonymously().then(() => {
     //   this.afs.collection('studentProfile', ref => ref.where('indexnum', '==', `${uid}`)).get().toPromise().then((data) => {

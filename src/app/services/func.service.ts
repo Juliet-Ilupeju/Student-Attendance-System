@@ -6,6 +6,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 @Injectable({
     providedIn: 'root'
 })
+
 export class FuncService {
 
     public createdAt = firebase.firestore.Timestamp.now().seconds;
@@ -85,9 +86,5 @@ export class FuncService {
             this.uiService.hideLoader();
             this.uiService.showError(err.message);
         });
-    }
-
-    public getCheckInStudents() {
-        return this.firestore.collection('attendance_checkin', ref => ref.orderBy('createdAt', 'desc')).valueChanges();
     }
 }

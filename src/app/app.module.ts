@@ -19,6 +19,7 @@ import { AddStudentComponent } from './pages/add-student/add-student.component';
 import { ViewAttendanceComponent } from './pages/view-attendance/view-attendance.component';
 import { RegStudentsComponent } from './pages/reg-students/reg-students.component';
 import { SidenavComponent } from './misc/sidenav/sidenav.component';
+import { HttpClientModule } from "@angular/common/http";
 
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,6 +47,7 @@ import { CheckInComponent } from './pages/check-in/check-in.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
